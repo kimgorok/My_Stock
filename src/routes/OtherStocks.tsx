@@ -112,7 +112,7 @@ function Stocks() {
           <중
             variants={TextVariants}
             initial="normal"
-            whileHover="hover "
+            whileHover="hover"
             whileTap="tap"
           >
             중

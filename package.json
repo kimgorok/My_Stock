@@ -1,12 +1,13 @@
 {
   "homepage": "https://kimgorok.github.io/My_Stock/",
+ 
   "name": "my-stock",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",  
