@@ -8,7 +8,7 @@ const ROUTE_OTHERSTOCKS = "/other";
 
 function Router() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={import.meta.env.PUBLIC_URL}>
       <NavBar />
 
       <Routes>
