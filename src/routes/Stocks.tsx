@@ -2,19 +2,11 @@ import { useQuery } from "react-query";
 import { fetchStockData } from "./api";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
-import SeoNam from "../Components/MyStocks/SeoNam";
-import SinSeong from "../Components/MyStocks/SinSeong";
-import PowerLogics from "../Components/MyStocks/PowerLogics";
-import DukSung from "../Components/MyStocks/DukSung";
-import Mobis from "../Components/MyStocks/Mobis";
-import WonikPNE from "../Components/MyStocks/WonikPNE";
-import Kiswire from "../Components/MyStocks/Kiswire";
-import LSElectric from "../Components/MyStocks/LSElectric";
-import FloatButton from "../Components/Button/FloatButton";
-import InziControls from "../Components/MyStocks/InziControls";
-import Lscnsasia from "../Components/MyStocks/Lscnsasia";
+import SeoNam from "../Components/MyStocks/MainStock";
 
-export const Wrapper = styled.div`
+import FloatButton from "../Components/Button/FloatButton";
+
+export const StockBox = styled.div`
   display: grid;
   padding: 40px;
   gap: 20px;
@@ -79,6 +71,19 @@ export interface StockData {
   response: any;
 }
 
+const ComponentArray = [
+  "서남",
+  "신성델타테크",
+  "파워로직스",
+  "덕성",
+  "모비스",
+  "원익피앤이",
+  "고려제강",
+  "LS ELECTRIC",
+  "LS전선아시아",
+  "인지컨트롤스",
+];
+
 function Stocks() {
   const stockName = "서남"; // 종목명 설정
   const { isLoading, data } = useQuery<StockData>(["stock", stockName], () =>
@@ -97,27 +102,18 @@ function Stocks() {
       <Helmet>
         <title>초전도체 관련주</title>
       </Helmet>
-      <Header>
-        <Title>초전도체 관련주</Title>
-      </Header>
+
       {isLoading ? (
         <InLoading>불러오는 중...⏳</InLoading>
       ) : (
         <>
           <Date>{formatDate(data?.response.body.items.item[0].basDt)}</Date>
 
-          <Wrapper>
-            <SeoNam />
-            <SinSeong />
-            <PowerLogics />
-            <DukSung />
-            <Mobis />
-            <WonikPNE />
-            <Kiswire />
-            <LSElectric />
-            <InziControls />
-            <Lscnsasia />
-          </Wrapper>
+          <StockBox>
+            {ComponentArray.map((stock) => (
+              <SeoNam stockName={stock} />
+            ))}
+          </StockBox>
           <FloatButton />
         </>
       )}

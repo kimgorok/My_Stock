@@ -4,8 +4,11 @@ import { StockCard, Stockfluctuation } from "./style/StockStyle";
 import { fetchStockData } from "../../routes/api";
 import MyChart from "../charts/MyChart";
 
-function LSElectric() {
-  const stockName = "LS ELECTRIC"; // 종목명 설정
+interface StockName {
+  stockName: string;
+}
+
+function SeoNam({ stockName }: StockName) {
   const { data } = useQuery<StockData>(["stock", stockName], () =>
     fetchStockData(stockName)
   );
@@ -67,7 +70,7 @@ function LSElectric() {
               ).toLocaleString()}{" "}
               주
             </h3>
-            <MyChart stockName="LS ELECTRIC" />
+            <MyChart stockName={stockName} />
           </StockCard>
         </>
       )}
@@ -75,4 +78,4 @@ function LSElectric() {
   );
 }
 
-export default LSElectric;
+export default SeoNam;
