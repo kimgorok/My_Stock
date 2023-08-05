@@ -110,8 +110,8 @@ function Stocks() {
           <Date>{formatDate(data?.response.body.items.item[0].basDt)}</Date>
 
           <StockBox>
-            {ComponentArray.map((stock) => (
-              <SeoNam stockName={stock} />
+            {ComponentArray.map((stock, index) => (
+              <SeoNam stockName={stock} key={index} />
             ))}
           </StockBox>
           <FloatButton />
