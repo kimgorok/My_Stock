@@ -3,7 +3,7 @@ import Stocks from "./routes/Stocks";
 import NavBar from "./Components/NavBar";
 import OtherStocks from "./routes/OtherStocks";
 
-const ROUTE_STOCKS = "/My_Stock/";
+const ROUTE_STOCKS = "/My_Stock";
 const ROUTE_OTHERSTOCKS = "/other";
 
 function Router() {
