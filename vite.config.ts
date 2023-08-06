@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     outDir: "./build",
   },
-  base: "/My_Stock",
+  base: "/My_Stock/",
 });
