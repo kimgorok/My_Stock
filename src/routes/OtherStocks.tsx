@@ -143,7 +143,7 @@ function Stocks() {
           </다>
         </List>
       </Wrapper>
-      <Link to="/">
+      <Link to="/My_Stock/">
         <GoHome>돌아가기</GoHome>
       </Link>
       <FloatButton />

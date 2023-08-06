@@ -12,8 +12,8 @@ function Router() {
       <NavBar />
 
       <Routes>
-        <Route path={ROUTE_OTHERSTOCKS} element={<OtherStocks />} />
         <Route path={ROUTE_STOCKS} element={<Stocks />} />
+        <Route path={ROUTE_OTHERSTOCKS} element={<OtherStocks />} />
       </Routes>
     </BrowserRouter>
   );

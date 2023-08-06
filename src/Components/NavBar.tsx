@@ -75,7 +75,7 @@ function NavBar() {
           <Menu>메뉴</Menu>
           {isDropdownOpen && (
             <DropdownContent>
-              <DropdownItem to="/">국내 주식</DropdownItem>
+              <DropdownItem to="/My_Stock/">국내 주식</DropdownItem>
               <DropdownItem to="/other">해외 주식</DropdownItem>
             </DropdownContent>
           )}
